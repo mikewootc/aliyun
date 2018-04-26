@@ -1,6 +1,6 @@
 Forked from: https://github.com/liuyinglong/aliyun . And changed DDNS example.
 
-Fork后的变更(DNS例程):
+Fork后的变更: DNS例程, 在此改为一个稍微正式点的工具来用, 具体修改如下:
 1. 原本的例子是获取SubDomain, 此处改为DomainName.
 2. 原本对于记录列表只取index 0, 此处改为遍历修改所有A记录(改为同一个IP, 即本机公网IP).
 3. 原本的RR默认取www, 此处改为保持原RR字段值不变.
