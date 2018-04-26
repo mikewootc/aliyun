@@ -25,6 +25,9 @@ Fork后的变更: DNS例程, 在此改为一个稍微正式点的工具来用, �
     node ./index.js
 
 
+以下为Fork前的原版README:
+
+
 # 阿里云 API 签名
 
 > github:[https://github.com/liuyinglong/aliyun](https://github.com/liuyinglong/aliyun);  
