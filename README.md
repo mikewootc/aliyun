@@ -1,3 +1,5 @@
+# Fork版说明
+
 Forked from: https://github.com/liuyinglong/aliyun . And changed DDNS example.
 
 Fork后的变更: DNS例程, 在此改为一个稍微正式点的工具来用, 具体修改如下:
@@ -5,6 +7,22 @@ Fork后的变更: DNS例程, 在此改为一个稍微正式点的工具来用, �
 2. 原本对于记录列表只取index 0, 此处改为遍历修改所有A记录(改为同一个IP, 即本机公网IP).
 3. 原本的RR默认取www, 此处改为保持原RR字段值不变.
 4. 原本在DNS例程中修改配置信息, 此处改为在config.json中设置.
+
+本DDNS工具使用:
+
+## 安装
+
+    git clone https://github.com/mikewootc/aliyun.git
+    yarn install 
+
+## 配置
+
+    修改DNS/config.json文件
+
+## 运行
+
+    cd DNS
+    node ./index.js
 
 
 # 阿里云 API 签名
