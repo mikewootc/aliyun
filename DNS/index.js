@@ -8,6 +8,7 @@ let AliCloudClient = require("../aliCloudClient");
 let Req = require("../request");
 let request = new Req();
 let schedule = require("node-schedule");
+const axios = require('axios');
 
 let argv = yargs
     .option('c', { alias : 'config', demand: false, default: './config.json', describe: 'specify config file', type: 'string' })
@@ -40,6 +41,11 @@ function getMyIp() {
     }).catch(function (err) {
         return Promise.reject(err);
     })
+}
+
+async function getMyIp2() {
+    let ret = await axios.get('http://ipecho.net/plain');
+    return ret.data;
 }
 
 // e.g. 
@@ -80,9 +86,9 @@ function upDateRecord(record, ip) {
 }
 
 async function watchIpChange() {
-    logTrace('getMyIp');
+    logTrace('getMyIp2');
     try {
-        let myIp = await getMyIp();
+        let myIp = await getMyIp2();
         logTrace('myIp:', myIp, 'ipBak:', ipBak);
 
         if (!myIp) {
